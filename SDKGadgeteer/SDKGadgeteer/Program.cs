@@ -51,6 +51,12 @@ namespace SDKGadgeteer
         {
             get { return sdCard; }
         }
+
+
+        public Gadgeteer.Modules.GHIElectronics.Tunes Tunes
+        {
+            get { return tunes; }
+        }
         #endregion
 
         // This method is run when the mainboard is powered up or reset.   

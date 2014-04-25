@@ -18,7 +18,7 @@ namespace SDKGadgeteer
             _menu.Lines[1] = "Demo Joystick";
             _menu.Lines[2] = "Demo Timer";
             _menu.Lines[3] = "Demo SDCard";
-            _menu.Lines[4] = "Item4";
+            _menu.Lines[4] = "Demo Tunes";
             _menu.Lines[5] = "Item5";
             _menu.Lines[6] = "Item6";
             _menu.Lines[7] = "Item7";
@@ -41,6 +41,9 @@ namespace SDKGadgeteer
                     break;
                 case 3:
                     MainHandle.Context.CurrentState = new SDCardState(MainHandle);
+                    break;
+                case 4:
+                    MainHandle.Context.CurrentState = new TunesDemoState(MainHandle);
                     break;
                 case 8:
                     MainHandle.Context.CurrentState = new InfoState(MainHandle);

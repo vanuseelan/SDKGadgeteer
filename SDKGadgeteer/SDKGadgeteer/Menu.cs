@@ -45,14 +45,15 @@ namespace SDKGadgeteer
         {
             string titleScreen="";
             string line = "";
-            uint limitChar = 16;
+            uint limitCharTitle = 16;
+            uint limitChar = 25;
             uint YFirstLine = 15;
             uint size = 15;
 
             _Screen.Clear();
 
             //write title
-            titleScreen = _Title.Length > limitChar ? _Title.Substring(0, 13) + "..." : _Title;
+            titleScreen = _Title.Length > limitCharTitle ? _Title.Substring(0, 13) + "..." : _Title;
             WriteTitle(titleScreen, 0, 0);
 
             for (uint i = 0; i < _Lines.Length; i++)
@@ -60,7 +61,7 @@ namespace SDKGadgeteer
                 if (_Lines[i] == "")
                     continue;
 
-                line = _Lines[i].Length > limitChar ? _Lines[i].Substring(0, 13) + "..." : _Lines[i];
+                line = _Lines[i].Length > limitChar ? _Lines[i].Substring(0, 22) + "..." : _Lines[i];
                 if (i == _CursorLine)
                 {
                     WriteLineSelected(line, 0, YFirstLine + size * i);

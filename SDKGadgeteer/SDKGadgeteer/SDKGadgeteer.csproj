@@ -40,6 +40,8 @@
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="RttlMelody.cs" />
+    <Compile Include="TunesDemoState.cs" />
     <Compile Include="ExampleData.cs" />
     <Compile Include="SDCardState.cs" />
     <Compile Include="ErrorState.cs" />
