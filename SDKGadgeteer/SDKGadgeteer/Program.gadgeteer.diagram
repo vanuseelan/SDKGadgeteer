@@ -163,8 +163,8 @@
         <socketShapeMoniker Id="68247fa9-69f3-4bf4-8ec6-ef93a7350d50" />
       </nodes>
     </socketConnector>
-    <socketConnector Id="a9f2cfa3-0c20-42b9-9b26-f4b0c161d215" edgePoints="[(7.06877952401138 : 3.545); (6.805 : 3.545); (6.805 : 3.445); (5.62473441914147 : 3.445 : JumpStart); (5.45806775247481 : 3.445 : JumpEnd); (4.42122047598862 : 3.445)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <socketUseReferencesSocketMoniker Id="68146ddc-1246-42e4-9dbe-3618748bc4c0" />
+    <socketConnector Id="9d985361-3781-423d-9c8f-9ff61e4cf0ee" edgePoints="[(7.06877952401138 : 3.545); (6.805 : 3.545); (6.805 : 3.445); (5.62473441914147 : 3.445 : JumpStart); (5.45806775247481 : 3.445 : JumpEnd); (4.42122047598862 : 3.445)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <socketUseReferencesSocketMoniker Id="2ce8fcf6-05c5-4354-916f-0c6487c7e8da" />
       <nodes>
         <socketUseShapeMoniker Id="19c97b63-d012-4e17-8423-db65e3397c49" />
         <socketShapeMoniker Id="09b0400c-9034-41bb-86ee-28954bc9a636" />

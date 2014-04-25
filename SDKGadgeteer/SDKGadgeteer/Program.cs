@@ -57,6 +57,11 @@ namespace SDKGadgeteer
         {
             get { return tunes; }
         }
+
+        public Gadgeteer.Modules.GHIElectronics.LED_Strip LED_Strip
+        {
+            get { return led_Strip; }
+        }
         #endregion
 
         // This method is run when the mainboard is powered up or reset.   

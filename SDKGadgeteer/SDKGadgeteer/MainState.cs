@@ -12,18 +12,26 @@ namespace SDKGadgeteer
 
         public MainState(Program handle) : base(handle,TypeState.Normal)
         {
+            string disconnect = "(disconnect)";
             _menu = new Menu(MainHandle.Display_N18);
             _menu.Title = "SDK Gadgeteer";
             _menu.Lines[0] = "On/off Button led";
             _menu.Lines[1] = "Demo Joystick";
-            _menu.Lines[2] = "Demo Timer";
+            _menu.Lines[2] = "Demo Timer";            
             _menu.Lines[3] = "Demo SDCard";
             _menu.Lines[4] = "Demo Tunes";
-            _menu.Lines[5] = "Item5";
+            _menu.Lines[5] = "Demo Led Strip";
             _menu.Lines[6] = "Item6";
             _menu.Lines[7] = "Item7";
             _menu.Lines[8] = "Infos,versions,...";
-            _menu.Draw();          
+
+            if (MainHandle.Tunes == null)
+                _menu.Lines[4] += disconnect;
+
+            if (MainHandle.LED_Strip == null)
+                _menu.Lines[5] += disconnect;
+
+            _menu.Draw();
         }
 
         private void SelectState(int menuItem)
@@ -44,6 +52,9 @@ namespace SDKGadgeteer
                     break;
                 case 4:
                     MainHandle.Context.CurrentState = new TunesDemoState(MainHandle);
+                    break;
+                case 5:
+                    MainHandle.Context.CurrentState = new LedStripDemoState(MainHandle);
                     break;
                 case 8:
                     MainHandle.Context.CurrentState = new InfoState(MainHandle);
