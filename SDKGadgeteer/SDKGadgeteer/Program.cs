@@ -84,6 +84,7 @@ namespace SDKGadgeteer
             Debug.Print("Program Started");
 
 
+            ConsoleDisplayN18.Screen = display_N18;
             State startState = new SplashScreenState(this);
             ErrorState errorState = new ErrorState(this);
             _Context = new Context(startState, errorState);

@@ -9,9 +9,11 @@ namespace SDKGadgeteer
     public sealed class MainState : State
     {
         private Menu _menu;
+        private State[] _arrayState;
 
         public MainState(Program handle) : base(handle,TypeState.Normal)
         {
+            _arrayState = new State[9];
             string disconnect = "(disconnect)";
             _menu = new Menu(MainHandle.Display_N18);
             _menu.Title = "SDK Gadgeteer";
@@ -21,7 +23,7 @@ namespace SDKGadgeteer
             _menu.Lines[3] = "Demo SDCard";
             _menu.Lines[4] = "Demo Tunes";
             _menu.Lines[5] = "Demo Led Strip";
-            _menu.Lines[6] = "Item6";
+            _menu.Lines[6] = "Demo Screen";
             _menu.Lines[7] = "Item7";
             _menu.Lines[8] = "Infos,versions,...";
 
@@ -36,30 +38,44 @@ namespace SDKGadgeteer
 
         private void SelectState(int menuItem)
         {
-            switch (menuItem)
-            {
-                case 0:
-                    MainHandle.Context.CurrentState = new LedButtonState(MainHandle);
-                    break;
-                case 1:
-                    MainHandle.Context.CurrentState = new JoystickDemoState(MainHandle);
-                    break;
-                case 2:
-                    MainHandle.Context.CurrentState = new ExampleState(MainHandle);
-                    break;
-                case 3:
-                    MainHandle.Context.CurrentState = new SDCardState(MainHandle);
-                    break;
-                case 4:
-                    MainHandle.Context.CurrentState = new TunesDemoState(MainHandle);
-                    break;
-                case 5:
-                    MainHandle.Context.CurrentState = new LedStripDemoState(MainHandle);
-                    break;
-                case 8:
-                    MainHandle.Context.CurrentState = new InfoState(MainHandle);
-                    break;
-            }
+             State state = null;
+             if (_arrayState[menuItem] == null)
+             {
+                 switch (menuItem)
+                 {
+                     case 0:
+                         state = new LedButtonState(MainHandle);
+                         break;
+                     case 1:
+                         state = new JoystickDemoState(MainHandle);
+                         break;
+                     case 2:
+                         state = new ExampleState(MainHandle);
+                         break;
+                     case 3:
+                         state = new SDCardState(MainHandle);
+                         break;
+                     case 4:
+                         state = new TunesDemoState(MainHandle);
+                         break;
+                     case 5:
+                         state = new LedStripDemoState(MainHandle);
+                         break;
+                     case 6:
+                         state = new ScreenDemoState(MainHandle);
+                         break;
+                     case 8:
+                         state = new InfoState(MainHandle);
+                         break;
+                 }
+                 _arrayState[menuItem] = state;
+             }
+             else
+             {
+                 state = _arrayState[menuItem];
+             }
+
+             MainHandle.Context.CurrentState = state;
         }
         
         public override void Entry()
@@ -79,7 +95,7 @@ namespace SDKGadgeteer
 
         public override void JoystickReleased(Joystick sender, Joystick.JoystickState state)
         {
-            //PrintText.Write("Selected " + _menu.CursorLine, MainHandle.Display_N18);
+            //ConsoleDisplayN18.Write("Selected " + _menu.CursorLine);
             //Thread.Sleep(1000);
             //_menu.Draw();
             SelectState(_menu.CursorLine);

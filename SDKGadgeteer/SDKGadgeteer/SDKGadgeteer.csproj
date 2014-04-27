@@ -40,6 +40,7 @@
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="ScreenDemoState.cs" />
     <Compile Include="LedStripDemoState.cs" />
     <Compile Include="RttlMelody.cs" />
     <Compile Include="TunesDemoState.cs" />
@@ -52,7 +53,7 @@
     <Compile Include="LedButtonState.cs" />
     <Compile Include="MainState.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="PrintText.cs" />
+    <Compile Include="ConsoleDisplayN18.cs" />
     <Compile Include="Program.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +81,7 @@
     <Reference Include="Gadgeteer.SPI, Version=2.42.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="GHI.OSHW.Hardware, Version=4.2.6.1, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="GHIElectronics.Gadgeteer.FEZCerberus, Version=4.2.101.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>

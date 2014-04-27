@@ -22,8 +22,8 @@ namespace SDKGadgeteer
 
         public override void Entry()
         {
-            Display_N18 screen = MainHandle.Display_N18;
-           PrintText.Write(Error.Message + " " + Error.StackTrace, screen);
+            ConsoleDisplayN18.Clear();
+            ConsoleDisplayN18.WriteLine(Error.Message + " " + Error.StackTrace);
         }
 
         public override void Exit()

@@ -50,7 +50,8 @@ namespace SDKGadgeteer
         {
             if (_Tunes == null)
             {
-                PrintText.Write("The module Tunes is not connected.You have to connect in the socket 3 and in the Gadgeteer's designer(don't forget to recompile the project).", MainHandle.Display_N18);
+                ConsoleDisplayN18.Clear();
+                ConsoleDisplayN18.WriteLine("The module Tunes is not connected.You have to connect in the socket 3 and in the Gadgeteer's designer(don't forget to recompile the project).");
                 Thread.Sleep(2000);
                 MainHandle.Context.GoBack();
             }
@@ -75,7 +76,7 @@ namespace SDKGadgeteer
 
         public override void JoystickReleased(Joystick sender, Joystick.JoystickState state)
         {
-            //PrintText.Write("Selected " + _menu.CursorLine, MainHandle.Display_N18);
+            //ConsoleDisplayN18.Write("Selected " + _menu.CursorLine);
             //Thread.Sleep(1000);
             //_menu.Draw();
             PlayMelody(_menu.CursorLine);

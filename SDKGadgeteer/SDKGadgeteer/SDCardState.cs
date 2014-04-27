@@ -35,7 +35,8 @@ namespace SDKGadgeteer
             }
             else
             {
-                PrintText.Write("Sorry I cannot save the date.", MainHandle.Display_N18);
+                ConsoleDisplayN18.Clear();
+                ConsoleDisplayN18.WriteLine("Sorry I cannot save the date.");
                 Thread.Sleep(1000);                
             }
 
@@ -61,7 +62,8 @@ namespace SDKGadgeteer
             ReadData();
             if (_Data != null)
             {
-                PrintText.Write("The last date save in the SDCard : " + _Data.LastDate.ToString(), MainHandle.Display_N18);
+                ConsoleDisplayN18.Clear();
+                ConsoleDisplayN18.WriteLine("The last date save in the SDCard : " + _Data.LastDate.ToString());
             }
         }
 
@@ -87,9 +89,10 @@ namespace SDKGadgeteer
             bool result = false;
             if (!MainHandle.SdCard.IsCardInserted)
             {
-                MainHandle.Display_N18.Clear();
-                PrintText.Write("Insert the SDCard.", MainHandle.Display_N18, 0, 0);
-                PrintText.Write("After press Joystick.", MainHandle.Display_N18, 0, 15);
+
+                ConsoleDisplayN18.Clear();
+                ConsoleDisplayN18.WriteLine("Insert the SDCard.");
+                ConsoleDisplayN18.WriteLine("After press Joystick.");
             }
             else
             {

@@ -18,7 +18,8 @@ namespace SDKGadgeteer
         public override void Entry()
         {
             //To do at the start (subscribe events...)
-            PrintText.Write("Hello World !", MainHandle.Display_N18);
+            ConsoleDisplayN18.Clear();
+            ConsoleDisplayN18.WriteLine("Hello World !");
             Thread.Sleep(1000);
 
             StartListen(); //start timer and interface (button Home, back and joystick)
@@ -38,13 +39,8 @@ namespace SDKGadgeteer
 
         public override void Do()
         {
-            //To do often
-        }
-
-        void Timer_Tick(Gadgeteer.Timer timer)
-        {
             _Counter++;
-            PrintText.Write("Counter = " + _Counter +"s", MainHandle.Display_N18);
+            ConsoleDisplayN18.Write("Counter = " + _Counter + "s", 50, 50);
             if ((_Counter % 2) == 0)
             {
                 MainHandle.ButtonLeft.TurnLEDOn();
@@ -55,6 +51,11 @@ namespace SDKGadgeteer
                 MainHandle.ButtonLeft.TurnLEDOff();
                 MainHandle.ButtonRight.TurnLEDOn();
             }
+        }
+
+        void Timer_Tick(Gadgeteer.Timer timer)
+        {
+            Do();
         }
     }
 }

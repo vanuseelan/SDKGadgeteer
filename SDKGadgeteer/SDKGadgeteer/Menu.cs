@@ -11,6 +11,9 @@ namespace SDKGadgeteer
         private int _CursorLine = 0;
         private string[] _Lines;
         private Display_N18 _Screen;
+        private Font _FontTitle = Resources.GetFont(Resources.FontResources.NinaB);
+        private Font _FontItemSelected = Resources.GetFont(Resources.FontResources.NinaB);
+        private Font _FontItem = Resources.GetFont(Resources.FontResources.small);
 
 
         public Menu(Display_N18 screen)
@@ -53,6 +56,9 @@ namespace SDKGadgeteer
             _Screen.Clear();
 
             //write title
+            //int withString = 0;
+            //int heightString = 0;
+            //TODO : _FontTitle.ComputeExtent(str, out withString, out heightString); 
             titleScreen = _Title.Length > limitCharTitle ? _Title.Substring(0, 13) + "..." : _Title;
             WriteTitle(titleScreen, 0, 0);
 
@@ -75,10 +81,10 @@ namespace SDKGadgeteer
         
         private void WriteTitle(string str, uint x, uint y)
         {
-            uint size = 15;
+            uint size = 15;            
             Bitmap textBmp = new Bitmap((int)_Screen.Width, (int)size);
             //textBmp.DrawRectangle(GT.Color.White, 1, 0, 0, 75, 12, 0, 0, GT.Color.White, 0, 0, GT.Color.White, 75, 12, 0xFF);
-            textBmp.DrawText(str, Resources.GetFont(Resources.FontResources.NinaB), GT.Color.Green,0,0);
+            textBmp.DrawText(str, _FontTitle, GT.Color.Green, 0, 0);
             _Screen.Draw(textBmp, x,y);
             textBmp.Dispose();
         }
@@ -88,7 +94,7 @@ namespace SDKGadgeteer
             uint size = 15;
             Bitmap textBmp = new Bitmap((int)_Screen.Width, (int)size);
             //textBmp.DrawRectangle(GT.Color.White, 1, 0, 0, 75, 12, 0, 0, GT.Color.White, 0, 0, GT.Color.White, 75, 12, 0xFF);
-            textBmp.DrawText(str, Resources.GetFont(Resources.FontResources.small), GT.Color.White, 0,0);
+            textBmp.DrawText(str, _FontItem, GT.Color.White, 0, 0);
             _Screen.Draw(textBmp, x, y);
             textBmp.Dispose();
         }
@@ -98,7 +104,7 @@ namespace SDKGadgeteer
             int size = 15;
             Bitmap textBmp = new Bitmap((int)_Screen.Width, (int)size);
             textBmp.DrawRectangle(GT.Color.White, 0, 0, 0, (int)_Screen.Width, size, 0, 0, GT.Color.White, 0, 0, GT.Color.White, 0, 0, 0xFF);
-            textBmp.DrawText(str, Resources.GetFont(Resources.FontResources.NinaB), GT.Color.Black,0,0);
+            textBmp.DrawText(str, _FontTitle, GT.Color.Black, 0, 0);
             _Screen.Draw(textBmp, x, y);
             textBmp.Dispose();
         }

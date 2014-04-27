@@ -15,8 +15,8 @@ namespace SDKGadgeteer
 
         public override void Entry()
         {
-            Display_N18 screen = MainHandle.Display_N18;
-            PrintText.Write("Demo Start", screen, 0, 0);
+            ConsoleDisplayN18.Clear();
+            ConsoleDisplayN18.Write("Demo Start", 0, 0);
             Thread.Sleep(1000);
             MainHandle.Context.CurrentState = new MainState(MainHandle);
         }

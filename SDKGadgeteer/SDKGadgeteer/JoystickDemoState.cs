@@ -19,7 +19,8 @@ namespace SDKGadgeteer
         public override void Entry()
         {
             StartListen();
-            PrintText.Write("Press and move the joystick." , MainHandle.Display_N18);
+            ConsoleDisplayN18.Clear();
+            ConsoleDisplayN18.WriteLine("Press and move the joystick.");
 
             _x = MainHandle.Display_N18.Width / 2;
             _y = MainHandle.Display_N18.Height / 2;
@@ -39,11 +40,14 @@ namespace SDKGadgeteer
         private bool _IsDetails = true;
         public override void JoystickReleased(Joystick sender, Joystick.JoystickState state)
         {
+            Clear();
             _IsDetails=!_IsDetails;
+            Draw();
         }
 
         public override void JoystickPosition(double X, double Y)
         {
+            Clear();
             if (Y < -0.3)
             {
                 _y = _y < 1 ? 0 : _y - (uint)(Y * 4); 
@@ -65,10 +69,15 @@ namespace SDKGadgeteer
             Draw();
         }
 
+        public void Clear()
+        {
+            string txt = _IsDetails ? "X (" + _x + "," + _y + ")" : "X";
+            ConsoleDisplayN18.ClearSimple(txt, _x, _y);
+        }
         public void Draw()
         {
             string txt = _IsDetails ? "X (" + _x + "," + _y + ")" : "X";
-           PrintText.Write(txt, MainHandle.Display_N18, _x, _y);
+            ConsoleDisplayN18.WriteSimple(txt, _x, _y);
         }
     }
 }

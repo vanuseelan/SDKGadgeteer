@@ -18,17 +18,16 @@ namespace SDKGadgeteer
         {
             StartListen();
 
-            Display_N18 screen = MainHandle.Display_N18;
-            screen.Clear();
-            PrintText.Write("About this DEMO Gadgeteer", screen, 0, 0);
-            PrintText.Write("Mainboard :", screen, 0, 15);
-            PrintText.Write(MainHandle.MotherCard.MainboardName, screen, 0, 30);
-            PrintText.Write(MainHandle.MotherCard.MainboardVersion, screen, 0, 45);
-            PrintText.Write("Framework :", screen, 0, 60);
-            PrintText.Write(SystemInfo.Version.ToString(),screen, 0, 75);
-            PrintText.Write("Logiciel :", screen, 0, 90);
-            PrintText.Write(Assembly.GetExecutingAssembly().GetName().Name, screen, 0, 105);
-            PrintText.Write(Assembly.GetExecutingAssembly().GetName().Version.ToString(), screen, 0, 120);
+            ConsoleDisplayN18.Clear();
+            ConsoleDisplayN18.WriteLine("About this DEMO Gadgeteer");
+            ConsoleDisplayN18.WriteLine("Mainboard :");
+            ConsoleDisplayN18.WriteLine(MainHandle.MotherCard.MainboardName);
+            ConsoleDisplayN18.WriteLine(MainHandle.MotherCard.MainboardVersion);
+            ConsoleDisplayN18.WriteLine("Framework :");
+            ConsoleDisplayN18.WriteLine(SystemInfo.Version.ToString());
+            ConsoleDisplayN18.WriteLine("Logiciel :");
+            ConsoleDisplayN18.WriteLine(Assembly.GetExecutingAssembly().GetName().Name);
+            ConsoleDisplayN18.WriteLine(Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
 
         public override void Exit()

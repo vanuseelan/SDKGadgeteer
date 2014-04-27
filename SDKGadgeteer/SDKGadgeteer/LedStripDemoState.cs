@@ -19,13 +19,15 @@ namespace SDKGadgeteer
         {
             if (MainHandle.LED_Strip == null)
             {
-                PrintText.Write("The module Led Strip is not connected.You have to connect in the socket 3 and in the Gadgeteer's designer(don't forget to recompile the project).", MainHandle.Display_N18);
+                ConsoleDisplayN18.Clear();
+                ConsoleDisplayN18.WriteLine("The module Led Strip is not connected.You have to connect in the socket 3 and in the Gadgeteer's designer(don't forget to recompile the project).");
                 Thread.Sleep(2000);
                 MainHandle.Context.GoBack();
             }
             else
             {
-                PrintText.Write("Demo led strip !", MainHandle.Display_N18);
+                ConsoleDisplayN18.Clear();
+                ConsoleDisplayN18.WriteLine("Demo led strip !");
                 StartListen(); //start timer and interface (button Home, back and joystick)
 
                 MainHandle.LED_Strip.TurnAllLedsOn();
@@ -55,7 +57,7 @@ namespace SDKGadgeteer
         void Timer_Tick(Gadgeteer.Timer timer)
         {
             _Counter++;
-            PrintText.Write("Counter = " + _Counter +"s", MainHandle.Display_N18);
+            ConsoleDisplayN18.Write("Counter = " + _Counter + "s",50,50);
 
             MainHandle.LED_Strip.SetBitmask((uint)(_Counter % 65));
             /*if ((_Counter % 2) == 0)

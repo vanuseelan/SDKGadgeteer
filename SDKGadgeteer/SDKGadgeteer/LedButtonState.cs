@@ -17,8 +17,8 @@ namespace SDKGadgeteer
         public override void Entry()
         {
             StartListen();
-
-            PrintText.Write("Press the joystick to turn on/off the button's led." , MainHandle.Display_N18);
+            ConsoleDisplayN18.Clear();
+            ConsoleDisplayN18.WriteLine("Press the joystick to turn on/off the button's led.");
         }
 
         public override void Exit()
