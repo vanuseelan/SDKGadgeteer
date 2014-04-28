@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="ConsoleStateMachine.State">
+    <Position X="0.75" Y="2.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="ConsoleStateMachine.State.TypeState">
+        <TypeIdentifier>
+          <NewMemberFileName>State.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAQAAEAAAAAAEAAAAAAAAAACAAACAACIUAAEQAAABA=</HashCode>
+      <FileName>State.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleStateMachine.ErrorState" Collapsed="true">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAIQAAAAAAAAAACAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ErrorState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleStateMachine.MenuState" Collapsed="true">
+    <Position X="4.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAYAAAABYAAAAAAAQAAAAAACAAACAACIAAAACAAAAA=</HashCode>
+      <FileName>MenuState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleStateMachine.SplashScreenState">
+    <Position X="4.25" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>SplashScreenState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleStateMachine.DemoListenState">
+    <Position X="4.25" Y="5.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAACAAACAACMEAAEAAAAAA=</HashCode>
+      <FileName>DemoListenState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleStateMachine.Context">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAgAAAiCAAAAAAAAEAIAAQAAAAABA=</HashCode>
+      <FileName>Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

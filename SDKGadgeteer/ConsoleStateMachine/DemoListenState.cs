@@ -33,7 +33,7 @@ namespace ConsoleStateMachine
             _message += @"        8       " + "\n";
             _message += @"       /\       " + "\n";
             _message += @"       ||       " + "\n";
-            _message += @"4 <==========> 6" + "\n";
+            _message += @"4 <===  5 ===> 6" + "\n";
             _message += @"       ||       " + "\n";
             _message += @"       \/       " + "\n";
             _message += @"        2       " + "\n";
